@@ -12,8 +12,11 @@ export interface ICompany {
 export interface IPost {
   title: string;
   body: string;
+  id: number;
 }
 
 export interface IComment {
-
+  name: string;
+  email: string;
+  body: string;
 }

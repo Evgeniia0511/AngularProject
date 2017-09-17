@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { UserService } from '../services/user.service';
 import { IUser } from '../interfaces';
 
 @Component({
   selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  templateUrl: './users.component.html'
 })
 export class UsersComponent implements OnInit {
 
   users: IUser[] = [];
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private userService: UserService,
+              private router: Router) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.userService
       .getUsers()
       .subscribe((users: IUser[]) => {
@@ -23,7 +24,7 @@ export class UsersComponent implements OnInit {
       });
   }
 
-  redirectToPost(user: IUser) {
+  redirectToPost(user: IUser): void {
     this.router.navigate(['/posts', user.id]);
   }
 }

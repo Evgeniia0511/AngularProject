@@ -3,23 +3,18 @@ import { Http } from '@angular/http';
 import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
 
-import { IPost } from '../interfaces';
+import { IComment } from '../interfaces';
 import { generateUrl } from '../utils';
 
 @Injectable()
-export class PostService {
+export class CommentService {
 
   constructor(private http: Http) {
   }
 
-  getPosts(id: number): Observable<IPost[]> {
+  getComments(id: number): Observable<IComment[]> {
     return this.http
-      .get(generateUrl(`posts`), {
-        params: {
-          userId: id
-        }
-      })
+      .get(generateUrl(`posts/${id}/comments`))
       .map(response => response.json());
   }
 }
-

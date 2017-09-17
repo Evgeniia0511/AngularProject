@@ -1,3 +1,11 @@
-<p>
-  comments works!
-</p>
+<div class="container">
+  <h2 *ngIf="post">Posts from <b>{{post.title}}</b></h2>
+
+  <ul>
+    <li class="grey-block" *ngFor="let comment of comments;">
+      <div><b>{{comment.name}}</b></div>
+      <div>{{comment.body}}</div>
+      <div><a href="mailto:{{comment.email}}">{{comment.email}}</a></div>
+    </li>
+  </ul>
+</div>

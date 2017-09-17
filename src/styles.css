@@ -1,4 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 h1 {
+    text-align: center;
+}
+h2 {
     font-weight: normal;
+}
+li {
+    list-style-type: none;
+}
+ul {
+    padding: 0;
+}
+a, a:focus, a:active, a:visited {
+    text-decoration: none;
+}
+.container{
+    margin: 0 auto;
+    max-width: 990px;
+}
+.grey-block {
+    border: 1px solid #ccc;
+    margin: 0 0 15px;
+    padding: 15px;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #e6e6e6;
 }

@@ -21,5 +21,11 @@ export class PostService {
       })
       .map(response => response.json());
   }
+
+  getPostById(id: number): Observable<IPost> {
+    return this.http
+      .get(generateUrl(`posts/${id}`))
+      .map(response => response.json());
+  }
 }
 

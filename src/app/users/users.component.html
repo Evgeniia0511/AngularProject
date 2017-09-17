@@ -1,8 +1,8 @@
 <div class="container">
-  <h1>Users</h1>
+  <h2>Users</h2>
 
   <ul>
-    <li *ngFor="let user of users;" (click)="redirectToPost(user)">
+    <li class="grey-block" *ngFor="let user of users;" (click)="redirectToPost(user)">
       <div><b>{{user.name}}</b></div>
       <div>
         <a href="mailto:{{user.email}}">{{user.email}}</a>

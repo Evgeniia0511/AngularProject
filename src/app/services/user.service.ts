@@ -23,4 +23,3 @@ export class UserService {
       .map(response => response.json());
   }
 }
-
