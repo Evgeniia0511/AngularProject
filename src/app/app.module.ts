@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import { PostsComponent } from './posts/posts.component';
 import { CommentsComponent } from './comments/comments.component';
-import { ServicesModule } from "./services/services.module";
+import { ServicesModule } from './services/services.module';
 
 
 @NgModule({
@@ -26,11 +26,11 @@ import { ServicesModule } from "./services/services.module";
         component: UsersComponent
       },
       {
-        path: 'posts',
+        path: 'posts/:id',
         component: PostsComponent
       },
       {
-        path: 'comments',
+        path: 'comments/:postId',
         component: CommentsComponent
       }
     ]),

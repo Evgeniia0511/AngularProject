@@ -2,9 +2,11 @@
   <h1>Users</h1>
 
   <ul>
-    <li *ngFor="let user of users;">
-      <div>{{user.name}}</div>
-      <div>{{user.email}}</div>
+    <li *ngFor="let user of users;" (click)="redirectToPost(user)">
+      <div><b>{{user.name}}</b></div>
+      <div>
+        <a href="mailto:{{user.email}}">{{user.email}}</a>
+      </div>
       <div>{{user.company.name}}</div>
     </li>
   </ul>
