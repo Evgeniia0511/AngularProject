@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserService } from '../services/user.service';
+import {FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IUser } from '../interfaces';
 
 @Component({
@@ -10,10 +11,15 @@ import { IUser } from '../interfaces';
 })
 export class UsersComponent implements OnInit {
 
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+
   users: IUser[] = [];
 
   constructor(private userService: UserService,
-              private router: Router) {
+              private router: Router,
+              private _formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
@@ -22,6 +28,13 @@ export class UsersComponent implements OnInit {
       .subscribe((users: IUser[]) => {
         this.users = users;
       });
+
+    this.firstFormGroup = this._formBuilder.group({
+        firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+        secondCtrl: ['', Validators.required]
+    });
   }
 
   redirectToPost(user: IUser): void {

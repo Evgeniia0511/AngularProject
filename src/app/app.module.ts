@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdCheckboxModule, MatInputModule, MatRadioModule, MatStepperModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+
 
 import { UsersComponent } from './users/users.component';
 import { PostsComponent } from './posts/posts.component';
@@ -34,9 +38,18 @@ import { ServicesModule } from './services/services.module';
         component: CommentsComponent
       }
     ]),
-    ServicesModule
+    ServicesModule,
+    BrowserAnimationsModule,
+    MdButtonModule,
+    MdCheckboxModule,
+    MatInputModule,
+    MatRadioModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
