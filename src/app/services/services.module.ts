@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UserService } from './user.service';
 import { PostService } from './post.service';
 import { CommentService } from './comment.service';
+import { MessageService } from './messages.service'
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { CommentService } from './comment.service';
   providers: [
     UserService,
     PostService,
-    CommentService
+    CommentService,
+    MessageService,
   ]
 })
 export class ServicesModule {

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserService } from '../services/user.service';
-import {FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MessageService } from '../services/messages.service'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IUser } from '../interfaces';
 
 @Component({
@@ -18,8 +19,9 @@ export class UsersComponent implements OnInit {
   users: IUser[] = [];
 
   constructor(private userService: UserService,
-              private router: Router,
-              private _formBuilder: FormBuilder) {
+    private messageService: MessageService,
+    private router: Router,
+    private _formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
@@ -30,14 +32,22 @@ export class UsersComponent implements OnInit {
       });
 
     this.firstFormGroup = this._formBuilder.group({
-        firstCtrl: ['', Validators.required]
+      firstCtrl: ['', Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
-        secondCtrl: ['', Validators.required]
+      secondCtrl: ['', Validators.required]
     });
   }
 
   redirectToPost(user: IUser): void {
     this.router.navigate(['/posts', user.id]);
+  }
+
+  sendMessage(): void {
+    this.messageService.sendMessage('Message from User Component to App Component!');
+  }
+
+  clearMessage(): void {
+    this.messageService.clearMessage();
   }
 }
