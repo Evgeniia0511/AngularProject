@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCheckboxModule, MatInputModule, MatRadioModule, MatStepperModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatStepperModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 
@@ -40,8 +40,8 @@ import { ServicesModule } from './services/services.module';
     ]),
     ServicesModule,
     BrowserAnimationsModule,
-    MdButtonModule,
-    MdCheckboxModule,
+    MatButtonModule,
+    MatCheckboxModule,
     MatInputModule,
     MatRadioModule,
     MatStepperModule,
